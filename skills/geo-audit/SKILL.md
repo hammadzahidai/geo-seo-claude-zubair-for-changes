@@ -93,8 +93,9 @@ Delegate analysis to 5 specialized subagents. Each subagent operates on the coll
 - Score brand authority signals that AI models use for entity recognition
 
 **Subagent 2: Platform Optimization (geo-platform-analysis)**
-- Assess readiness for Google AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot
-- Check platform-specific ranking factors and optimization opportunities
+- Assess readiness for all **10 major AI platforms**: Google AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot, Claude (Anthropic), Meta AI, Grok (xAI/X), DeepSeek, and Apple Intelligence
+- Check platform-specific ranking factors and optimization opportunities for each platform
+- Identify highest-opportunity platforms based on business type and existing presence
 
 **Subagent 3: Technical GEO Infrastructure (geo-technical)**
 - Analyze robots.txt for AI crawler access

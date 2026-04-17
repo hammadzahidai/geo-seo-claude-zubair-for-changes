@@ -1,9 +1,9 @@
 ---
 name: geo-platform-optimizer
-description: Platform-specific AI search optimization — audit and optimize for Google AI Overviews, ChatGPT, Perplexity, Gemini, and Bing Copilot individually
-version: 1.0.0
+description: Platform-specific AI search optimization — audit and optimize for the top 10 AI platforms: Google AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot, Claude, Meta AI, Grok (xAI), DeepSeek, and Apple Intelligence
+version: 2.0.0
 author: geo-seo-claude
-tags: [geo, ai-search, platform-optimization, chatgpt, perplexity, gemini, aio]
+tags: [geo, ai-search, platform-optimization, chatgpt, perplexity, gemini, aio, claude, meta-ai, grok, deepseek, apple-intelligence]
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 ---
 
@@ -11,7 +11,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write
 
 ## Core Insight
 
-Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for the same query. Each AI search platform uses different indexes, ranking logic, and source preferences. A page optimized for Google AI Overviews may be invisible to ChatGPT, and vice versa. Platform-specific optimization is not optional — it is the foundation of any serious GEO strategy.
+Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for the same query. Each AI search platform uses different indexes, ranking logic, and source preferences. A page optimized for Google AI Overviews may be invisible to ChatGPT, and vice versa. Platform-specific optimization is not optional — it is the foundation of any serious GEO strategy. This skill now audits the **top 10 globally used AI platforms**, ensuring comprehensive AI search visibility.
 
 ## How to Use This Skill
 
@@ -217,24 +217,221 @@ Only **11% of domains** are cited by BOTH ChatGPT and Google AI Overviews for th
 
 ---
 
+---
+
+## Platform 6: Claude (Anthropic)
+
+### How Claude Selects Sources
+- Claude's web search (claude.ai) uses ClaudeBot to fetch pages and favors **authoritative, factual, well-cited content**
+- Claude's Constitutional AI principles mean it **deprioritizes promotional, biased, or unsubstantiated claims**
+- Strongly weights **author credentials and explicit expertise signals**
+- Prefers content that directly answers questions in the first paragraph — passage extraction model
+- Claude has limited JavaScript rendering; content must be server-rendered to be indexed
+- Growing user base (100M+ users as of 2025); significant citation opportunity for authoritative brands
+
+### Optimization Checklist
+
+1. **Author Expertise Pages**: Create dedicated author profile pages linking to credentials, publications, or professional profiles. Claude heavily weights explicit expertise signals.
+2. **Balanced, Non-Promotional Tone**: Rewrite heavily promotional copy to be objective and evidence-based. Claude scores down content that reads as advertising.
+3. **Explicit Source Attribution**: After any factual claim, link or name the source. "According to [specific study/source]" patterns are highly citeable by Claude.
+4. **ClaudeBot robots.txt Access**: Verify ClaudeBot is not blocked in robots.txt. Check for wildcard Disallow rules that may inadvertently block it.
+5. **Server-Side Rendering (SSR)**: Ensure all key content is rendered in the initial HTML response. JavaScript-only content is invisible to ClaudeBot.
+6. **Concise Answer Blocks**: After each heading, write a 40-80 word direct answer that works as a standalone citation. This is Claude's preferred extraction pattern.
+7. **FAQ and Q&A Sections**: Structure key information as question-and-answer blocks. Claude frequently lifts these verbatim when answering user queries.
+8. **Trustworthiness Signals**: Display trust indicators — security badges, industry certifications, third-party reviews, and editorial policies. Claude's safety training makes it trust transparent, verified sources.
+9. **Avoid Clickbait Headlines**: Headings that overpromise or sensationalize reduce Claude's citation probability. Use clear, factual headings.
+10. **Internal Knowledge Graph**: Link between related pages on your site to help Claude understand the breadth of your topical expertise.
+
+### Scoring Rubric (0-100)
+
+| Criterion | Points | How to Score |
+|---|---|---|
+| ClaudeBot allowed in robots.txt | 15 | 15 if allowed, 0 if blocked or ambiguous |
+| Key content server-rendered (no JS dependency) | 15 | 15 if full SSR, 8 if partial, 0 if SPA-only |
+| Author pages with explicit credentials | 15 | 15 if full author pages, 8 if byline only, 0 if none |
+| Explicit source attribution on factual claims | 15 | 3 per cited source pattern, max 15 |
+| Concise direct answer blocks after headings | 15 | 3 per qualifying block, max 15 |
+| Non-promotional, balanced content tone | 10 | 10 if objective, 5 if mixed, 0 if promotional |
+| FAQ / Q&A sections present | 10 | 10 if 5+ Q&As, 5 if 1-4, 0 if none |
+| Trust signals (certifications, reviews, editorial policy) | 5 | 5 if multiple signals, 2 if one, 0 if none |
+
+---
+
+## Platform 7: Meta AI
+
+### How Meta AI Selects Sources
+- Meta AI is embedded in Facebook, Instagram, WhatsApp, and Messenger — reaching **3B+ daily active users**
+- Relies on Meta's social graph: content with high Facebook/Instagram engagement is surfaced more often
+- Uses **Llama models** and FacebookBot/Meta-ExternalAgent to crawl the web
+- **Open Graph (og:) tags** are critical — Meta AI uses them to understand and represent pages
+- Strongly favors brands with active, high-engagement social presence on Meta platforms
+- Local businesses benefit from complete Facebook Business Profile data
+
+### Optimization Checklist
+
+1. **Open Graph Tags**: Implement complete og:title, og:description, og:image, og:url, og:type on every page. Meta AI parses these first when understanding a page's context.
+2. **Facebook Business Page**: Create/optimize a Facebook Business Page with complete info: category, description, phone, address, hours, website link. This is Meta AI's primary data source for local/business queries.
+3. **Instagram Business Profile**: Ensure Instagram is a Business or Creator account with bio link, contact info, and consistent visual branding.
+4. **FacebookBot Access**: Verify FacebookBot and Meta-ExternalAgent are not blocked in robots.txt.
+5. **High-Engagement Content Strategy**: Publish content on Facebook/Instagram designed to generate shares and comments. Engagement is a direct authority signal for Meta AI.
+6. **Facebook Reviews**: Accumulate and respond to Facebook reviews. Meta AI surfaces review sentiment for local and product queries.
+7. **WhatsApp Business**: Set up WhatsApp Business with a catalog and automated responses if applicable. Meta AI can reference WhatsApp Business data.
+8. **Social Proof on Website**: Embed Facebook reviews, Instagram feeds, or social share counts on your site to reinforce Meta-verified credibility signals.
+9. **Consistent NAP Across Meta**: Business name, address, and phone must be identical across Facebook, Instagram, and the website. Meta AI cross-references these for entity confidence.
+10. **Meta Business Suite Verification**: Verify your business through Meta Business Suite for maximum trust signals across the Meta ecosystem.
+
+### Scoring Rubric (0-100)
+
+| Criterion | Points | How to Score |
+|---|---|---|
+| Complete Open Graph tags on all key pages | 20 | 20 if all pages complete, 10 if partial, 0 if missing |
+| Facebook Business Page (complete) | 20 | 20 if fully optimized, 10 if basic, 0 if none |
+| FacebookBot / Meta-ExternalAgent allowed | 10 | 10 if allowed, 0 if blocked |
+| Instagram Business Profile (active) | 15 | 15 if active with regular posts, 8 if present but sparse, 0 if none |
+| Facebook reviews (10+ with responses) | 10 | 10 if active reviews, 5 if few, 0 if none |
+| Social engagement on brand content | 10 | 10 if high engagement, 5 if moderate, 0 if low |
+| NAP consistency across Meta platforms | 10 | 10 if fully consistent, 5 if minor differences, 0 if inconsistent |
+| WhatsApp Business (if applicable) | 5 | 5 if set up, N/A if not applicable |
+
+---
+
+## Platform 8: Grok (xAI / X)
+
+### How Grok Selects Sources
+- Grok is built into X (Twitter) and has **real-time access to all public X posts and threads**
+- Grok-2 and Grok-3 are the current models; prioritizes **recency** over depth more than any other platform
+- X presence is the dominant ranking signal — brands with zero X activity are nearly invisible to Grok
+- Grok uses xAI's web crawler plus X's real-time data stream for web content
+- Particularly strong for tech, finance, current events, and trending topics
+- Verified X accounts (blue checkmark / organization badge) receive elevated authority
+
+### Optimization Checklist
+
+1. **Active X (Twitter) Account**: Create and maintain a brand X account. Post at minimum 3x per week. Grok's training data is heavily X-weighted and recency matters enormously.
+2. **X Verification**: Obtain X verification (organization badge or blue checkmark). Verified accounts receive higher authority signals in Grok's ranking.
+3. **Link Website Content in X Posts**: When publishing new content, post it on X with a link. This creates a direct connection between your X presence and your website content in Grok's index.
+4. **Engage in Industry Conversations**: Reply to and join trending conversations in your industry. Grok surfaces brands that participate in relevant X discussions, not just brands that broadcast.
+5. **X Spaces Participation**: Host or appear as a guest on X Spaces (live audio). Grok can reference and cite X Spaces content.
+6. **Real-Time Content Updates**: Publish breaking news, rapid commentary, or timely data on your website with clear timestamps. Grok is used heavily for time-sensitive queries.
+7. **Trending Hashtag Alignment**: Identify the top 5-10 hashtags in your industry and incorporate them into X posts when genuinely relevant.
+8. **Thread-Form Content**: Create Twitter/X threads that expand on key topics from your website. Threads are highly indexed by Grok and can drive users back to the source content.
+9. **Fast Page Load for Real-Time Events**: When you publish trending content, your site must load fast — Grok may surface your link during a viral moment when traffic spikes.
+10. **Monitor X Mentions**: Track brand mentions on X and engage with them. High reply/repost engagement on brand mentions signals authority to Grok.
+
+### Scoring Rubric (0-100)
+
+| Criterion | Points | How to Score |
+|---|---|---|
+| Active X account (3+ posts/week) | 20 | 20 if active, 10 if occasional, 0 if absent |
+| X verification status | 15 | 15 if verified, 0 if not |
+| Follower count (relative to industry) | 15 | 15 if strong, 8 if moderate, 0 if minimal |
+| Content linked from X to website | 10 | 10 if regularly linked, 5 if occasionally, 0 if never |
+| X engagement rate (likes, reposts per post) | 15 | 15 if high, 8 if moderate, 0 if low |
+| Industry conversation participation (replies/threads) | 10 | 10 if active, 5 if occasional, 0 if broadcast-only |
+| Content freshness and recency signals on website | 10 | 10 if updated regularly with dates, 5 if partial, 0 if outdated |
+| X Spaces participation | 5 | 5 if active, 0 if none |
+
+---
+
+## Platform 9: DeepSeek
+
+### How DeepSeek Selects Sources
+- DeepSeek (V3, R1) is a rapidly growing open-source Chinese AI with **global reach**, especially dominant in technical, scientific, and research queries
+- Trained on large corpora of academic papers, code repositories, and technical documentation
+- Strongly favors **primary sources**: original research, datasets, technical documentation, and peer-reviewed findings
+- Developer community is massive — GitHub presence and code documentation are important authority signals
+- DeepSeekBot crawls the web; accessible, server-rendered content is required
+- Growing multilingual capability — Chinese and English content doubles reach across its user base
+
+### Optimization Checklist
+
+1. **Deep Technical Documentation**: Publish thorough technical documentation, API references, or how-to guides. DeepSeek is trained heavily on technical content and prefers these as authoritative sources.
+2. **Research and Data Publications**: Create or cite original research, case studies, benchmarks, or datasets. DeepSeek is more likely to cite primary sources than summaries.
+3. **Academic Citation Style**: Use explicit, formal citations (author, year, publication). DeepSeek's training on academic papers means it recognizes and weights this citation style.
+4. **GitHub Presence**: For technical brands, maintain an active GitHub organization with starred repositories and quality READMEs. DeepSeek heavily indexes developer platforms.
+5. **DeepSeekBot Access**: Ensure DeepSeekBot (or the generic `*` wildcard) is not blocked in robots.txt. DeepSeek's crawler needs access to index your content.
+6. **English + Chinese Content**: If feasible, publish key content in both English and Simplified Chinese. This doubles visibility across DeepSeek's primary user demographics.
+7. **arXiv and Research Platform Presence**: For research-adjacent brands, publish or cite arXiv papers. DeepSeek's training data is weighted toward arXiv and academic repositories.
+8. **Reproducible Methodologies**: When publishing research or case studies, include methodology details, sample sizes, and reproducible steps. DeepSeek values verifiable claims.
+9. **Code Examples and Snippets**: Include working code examples on technical pages. DeepSeek trained on large code corpora and cites technical pages with concrete examples.
+10. **No Geo-Restrictions**: Ensure the site is accessible from China and Asia without CAPTCHA gates or geo-blocks. DeepSeek's users are globally distributed with high concentration in Asia.
+
+### Scoring Rubric (0-100)
+
+| Criterion | Points | How to Score |
+|---|---|---|
+| Technical documentation / guides depth | 20 | 20 if comprehensive, 10 if moderate, 0 if absent |
+| Original research or primary data published | 20 | 20 if original research, 10 if case studies/data, 0 if none |
+| Formal citations and academic references | 15 | 3 per cited academic/primary source, max 15 |
+| GitHub or developer platform presence | 10 | 10 if active, 5 if present, 0 if absent |
+| DeepSeekBot accessible (robots.txt) | 10 | 10 if allowed, 0 if blocked |
+| Content accessible from Asia (no geo-blocks) | 10 | 10 if globally accessible, 5 if partial, 0 if blocked |
+| Code examples or technical snippets | 10 | 10 if present on technical pages, 5 if some, 0 if none |
+| Chinese language content (if applicable) | 5 | 5 if bilingual, N/A if not applicable |
+
+---
+
+## Platform 10: Apple Intelligence
+
+### How Apple Intelligence Selects Sources
+- Apple Intelligence is integrated into **iOS 18+, macOS Sequoia+, and 2B+ Apple devices** via Siri, Writing Tools, and Smart Summarization
+- Uses **Applebot-Extended** for training data collection; Applebot for live Siri queries
+- Prioritizes **mobile-first, privacy-respecting, standards-compliant content**
+- Safari rendering engine (WebKit) is used — Safari-incompatible sites are poorly parsed
+- Siri Knowledge Graph is built from structured data, App Store metadata, and Apple Maps
+- Apple Intelligence's summarization engine strongly prefers clean, semantic HTML5 content
+- Voice search optimization (Siri queries are conversational and natural language) is key
+
+### Optimization Checklist
+
+1. **Applebot-Extended Access**: Verify Applebot-Extended is explicitly allowed in robots.txt (or not blocked by wildcard rules). This is the direct signal for Apple Intelligence training inclusion.
+2. **Safari/WebKit Compatibility**: Test all key pages in Safari on iPhone and Mac. Apple Intelligence uses WebKit for rendering; CSS Grid, Flexbox, and modern JS are well-supported; proprietary Chrome APIs are not.
+3. **Fast Mobile Load Time**: Achieve LCP (Largest Contentful Paint) under 2.5s on mobile. Apple Intelligence and Siri prioritize fast-loading mobile pages for on-device processing.
+4. **HTTPS with Valid Certificate**: Apple blocks mixed content and penalizes HTTP sites. Full HTTPS with a valid, modern TLS certificate is mandatory.
+5. **Semantic HTML5**: Use proper HTML5 elements: `<article>`, `<section>`, `<nav>`, `<header>`, `<footer>`, `<aside>`. Apple's summarization engine uses these for content structure understanding.
+6. **Siri-Optimized Q&A Content**: Write key content in natural language question-and-answer format. Siri queries are conversational ("What is the best way to...?" "How do I...?") — mirror this in headings and answers.
+7. **Schema.org Organization / LocalBusiness**: Implement Organization or LocalBusiness schema with complete fields. Siri uses structured data for entity recognition and quick fact retrieval.
+8. **App Store Presence (if applicable)**: For software/app companies, maintain a complete, keyword-optimized App Store listing. Apple Intelligence directly references App Store data for app queries.
+9. **Privacy-Compliant Implementation**: Minimize third-party trackers (Safari's ITP blocks many). Sites with heavy tracking that Safari blocks may be poorly rendered by Apple Intelligence.
+10. **iOS Universal Links**: Implement Apple Universal Links to allow Siri to deep-link into your app from web content if an app exists. This bridges web and app presence in Apple's ecosystem.
+
+### Scoring Rubric (0-100)
+
+| Criterion | Points | How to Score |
+|---|---|---|
+| Applebot-Extended allowed in robots.txt | 15 | 15 if allowed, 0 if blocked or unclear |
+| Safari/WebKit rendering (no Safari-specific bugs) | 15 | 15 if fully compatible, 8 if minor issues, 0 if broken |
+| Mobile LCP < 2.5s | 15 | 15 if < 2.5s, 8 if < 4s, 0 if > 4s |
+| Semantic HTML5 elements used throughout | 10 | 10 if consistent, 5 if partial, 0 if div-soup |
+| Schema.org Organization or LocalBusiness | 15 | 15 if comprehensive, 8 if basic, 0 if absent |
+| Siri-optimized conversational Q&A content | 10 | 10 if present, 5 if some, 0 if none |
+| HTTPS with valid certificate | 10 | 10 if full HTTPS, 0 if issues |
+| App Store presence (if applicable) | 5 | 5 if optimized, N/A if no app |
+| Privacy-compliant (minimal Safari-blocked trackers) | 5 | 5 if clean, 3 if some issues, 0 if heavy tracking |
+
+---
+
 ## Cross-Platform Summary
 
-### Universal Optimization Actions (help ALL platforms)
+### Universal Optimization Actions (help ALL 10 platforms)
 1. Wikipedia/Wikidata entity presence
 2. YouTube channel with relevant content
 3. Comprehensive, well-structured content with clear headings
 4. Schema.org structured data (especially Organization + sameAs)
-5. Fast page load and clean HTML
+5. Fast page load and clean HTML (SSR, not JS-only)
 6. Author pages with credentials and sameAs links
 7. Regular content updates with visible dates
+8. Allow all major AI crawlers in robots.txt
+9. HTTPS with valid TLS certificate
+10. Direct answer blocks after question-based headings
 
 ### Platform-Specific Priorities
-| Priority | Google AIO | ChatGPT | Perplexity | Gemini | Copilot |
-|---|---|---|---|---|---|
-| #1 | Top-10 ranking | Wikipedia | Reddit presence | YouTube | IndexNow |
-| #2 | Q&A structure | Entity graph | Original research | Knowledge Panel | Bing WMT |
-| #3 | Tables/lists | Bing SEO | Freshness | Schema.org | LinkedIn |
-| #4 | Featured snippets | Reddit | Community forums | GBP | Meta descriptions |
+| Priority | Google AIO | ChatGPT | Perplexity | Gemini | Copilot | Claude | Meta AI | Grok | DeepSeek | Apple |
+|---|---|---|---|---|---|---|---|---|---|---|
+| #1 | Top-10 ranking | Wikipedia | Reddit presence | YouTube | IndexNow | Author credentials | Facebook page | X account | Technical docs | Applebot access |
+| #2 | Q&A structure | Entity graph | Original research | Knowledge Panel | Bing WMT | Source attribution | Open Graph tags | X engagement | Primary research | Safari compat |
+| #3 | Tables/lists | Bing SEO | Freshness | Schema.org | LinkedIn | ClaudeBot access | Social engagement | Real-time content | GitHub presence | Mobile speed |
+| #4 | Featured snippets | Reddit | Community forums | GBP | Meta descriptions | Balanced tone | Reviews/ratings | Trending alignment | Academic citations | Schema.org |
 
 ---
 
@@ -247,7 +444,7 @@ Generate **GEO-PLATFORM-OPTIMIZATION.md** with the following structure:
 Date: [Date]
 
 ## Overall Platform Readiness
-- Combined GEO Score: XX/100 (average of all platform scores)
+- Combined GEO Score: XX/100 (average of all 10 platform scores)
 
 ## Platform Scores
 | Platform | Score | Status |
@@ -257,11 +454,16 @@ Date: [Date]
 | Perplexity AI | XX/100 | [Strong/Moderate/Weak] |
 | Google Gemini | XX/100 | [Strong/Moderate/Weak] |
 | Bing Copilot | XX/100 | [Strong/Moderate/Weak] |
+| Claude (Anthropic) | XX/100 | [Strong/Moderate/Weak] |
+| Meta AI | XX/100 | [Strong/Moderate/Weak] |
+| Grok (xAI / X) | XX/100 | [Strong/Moderate/Weak] |
+| DeepSeek | XX/100 | [Strong/Moderate/Weak] |
+| Apple Intelligence | XX/100 | [Strong/Moderate/Weak] |
 
 Status thresholds: Strong = 70+, Moderate = 40-69, Weak = 0-39
 
 ## Platform Details
-[Per-platform breakdown with score, gaps found, specific actions]
+[Per-platform breakdown with score, gaps found, specific actions for all 10 platforms]
 
 ## Prioritized Action Plan
 ### Quick Wins (this week)

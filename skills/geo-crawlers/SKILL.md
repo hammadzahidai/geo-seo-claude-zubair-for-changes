@@ -110,6 +110,29 @@ These crawlers serve large AI platforms or search ecosystems. Allowing them incr
 - **Impact of Blocking:** Content may not be accessible to Meta AI. Link previews on Facebook/Instagram are handled by a different crawler and are unaffected.
 - **Recommendation:** **ALLOW** -- Meta AI is embedded in apps with 3B+ combined users. Growing importance for AI visibility.
 
+#### Meta-ExternalAgent
+- **Operator:** Meta
+- **User-Agent:** `Meta-ExternalAgent`
+- **Purpose:** Meta's secondary AI crawler used for fetching web content for Meta AI responses across Facebook, Instagram, and WhatsApp. Works alongside FacebookBot.
+- **Impact of Blocking:** Meta AI may fail to fetch and summarize linked content when users share or query URLs within Meta apps.
+- **Recommendation:** **ALLOW** -- Complements FacebookBot for full Meta AI coverage.
+
+#### xAI-SearchBot (Grok)
+- **Operator:** xAI (Elon Musk / X Corp)
+- **User-Agent:** `xAI-SearchBot`
+- **Full User-Agent String:** `xAI-SearchBot/1.0 (+https://x.ai/grok/bot)`
+- **Purpose:** Powers Grok's web search capabilities on X (Twitter) and at grok.com. Grok accesses real-time X data plus crawled web content.
+- **Impact of Blocking:** Content will not appear in Grok's web search results on X or grok.com. Grok has tens of millions of daily users via X integration.
+- **Recommendation:** **ALLOW** -- Grok is rapidly growing and deeply integrated with X (Twitter). Blocking removes content from one of the fastest-growing AI search surfaces.
+
+#### DeepSeekBot
+- **Operator:** DeepSeek (High-Flyer / Liang Wenfeng)
+- **User-Agent:** `DeepSeekBot`
+- **Full User-Agent String:** `Mozilla/5.0 (compatible; DeepSeekBot/1.0; +https://deepseek.com/bot)`
+- **Purpose:** Crawls web content for DeepSeek's search-augmented AI features. DeepSeek models (V3, R1) use web retrieval for live queries.
+- **Impact of Blocking:** Content will not appear in DeepSeek's web-augmented AI responses. DeepSeek has massive global adoption especially in technical and research communities.
+- **Recommendation:** **ALLOW** -- DeepSeek is among the fastest-growing AI platforms globally. Technical and research-oriented brands especially benefit from DeepSeekBot access.
+
 ---
 
 ### Tier 3: Training-Only Crawlers (ALLOW or BLOCK Based on Strategy)
@@ -156,11 +179,14 @@ These crawlers are primarily used for AI model training rather than live search 
 | ChatGPT-User | 1 | **ALLOW** | User-initiated browsing |
 | ClaudeBot | 1 | **ALLOW** | Claude web search and analysis |
 | PerplexityBot | 1 | **ALLOW** | Best referral traffic AI search |
+| xAI-SearchBot | 1 | **ALLOW** | Powers Grok on X (rapidly growing) |
+| DeepSeekBot | 1 | **ALLOW** | DeepSeek web search (massive global adoption) |
 | Google-Extended | 2 | **ALLOW** | Gemini features; no search rank impact |
 | GoogleOther | 2 | **ALLOW** | Google AI research |
 | Applebot-Extended | 2 | **ALLOW** | Apple Intelligence (2B+ devices) |
 | Amazonbot | 2 | **ALLOW** | Alexa and Amazon AI |
 | FacebookBot | 2 | **ALLOW** | Meta AI (3B+ app users) |
+| Meta-ExternalAgent | 2 | **ALLOW** | Meta AI secondary crawler |
 | CCBot | 3 | Context | Training data only |
 | anthropic-ai | 3 | Context | Training data only |
 | Bytespider | 3 | **BLOCK** | Aggressive crawler, low benefit |
@@ -168,10 +194,12 @@ These crawlers are primarily used for AI model training rather than live search 
 
 ### Maximum AI Visibility Configuration (robots.txt)
 
-For sites wanting maximum AI search visibility:
+For sites wanting maximum AI search visibility across all 10 top platforms:
 
 ```
 # AI Crawlers - ALLOWED for AI search visibility
+
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
@@ -181,28 +209,45 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# xAI / Grok
+User-agent: xAI-SearchBot
+Allow: /
+
+# DeepSeek
+User-agent: DeepSeekBot
+Allow: /
+
+# Google (Gemini / AI Overviews)
 User-agent: Google-Extended
 Allow: /
 
 User-agent: GoogleOther
 Allow: /
 
+# Apple Intelligence
 User-agent: Applebot-Extended
 Allow: /
 
+# Amazon Alexa
 User-agent: Amazonbot
 Allow: /
 
+# Meta AI
 User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
 Allow: /
 
 # AI Crawlers - BLOCKED (aggressive/low value)
@@ -289,11 +334,14 @@ Generate a file called `GEO-CRAWLER-ACCESS.md`:
 | ChatGPT-User | OpenAI | 1 | [Status] | [Impact] |
 | ClaudeBot | Anthropic | 1 | [Status] | [Impact] |
 | PerplexityBot | Perplexity | 1 | [Status] | [Impact] |
+| xAI-SearchBot | xAI / X | 1 | [Status] | [Impact] |
+| DeepSeekBot | DeepSeek | 1 | [Status] | [Impact] |
 | Google-Extended | Google | 2 | [Status] | [Impact] |
 | GoogleOther | Google | 2 | [Status] | [Impact] |
 | Applebot-Extended | Apple | 2 | [Status] | [Impact] |
 | Amazonbot | Amazon | 2 | [Status] | [Impact] |
 | FacebookBot | Meta | 2 | [Status] | [Impact] |
+| Meta-ExternalAgent | Meta | 2 | [Status] | [Impact] |
 | CCBot | Common Crawl | 3 | [Status] | [Impact] |
 | anthropic-ai | Anthropic | 3 | [Status] | [Impact] |
 | Bytespider | ByteDance | 3 | [Status] | [Impact] |
@@ -301,8 +349,8 @@ Generate a file called `GEO-CRAWLER-ACCESS.md`:
 
 ## AI Visibility Score: [X]/100
 
-**Tier 1 Access:** [X/5 crawlers allowed]
-**Tier 2 Access:** [X/5 crawlers allowed]
+**Tier 1 Access:** [X/7 crawlers allowed]
+**Tier 2 Access:** [X/6 crawlers allowed]
 **Tier 3 Access:** [X/4 crawlers allowed]
 
 ---
@@ -337,9 +385,13 @@ The AI Crawler Access Score is calculated as:
 
 | Component | Weight | Scoring |
 |---|---|---|
-| Tier 1 Crawlers Allowed | 50% | 20 points per Tier 1 crawler allowed (5 crawlers = 100 points max, scaled to 50) |
-| Tier 2 Crawlers Allowed | 25% | 20 points per Tier 2 crawler allowed (5 crawlers = 100 points max, scaled to 25) |
+| Tier 1 Crawlers Allowed | 50% | ~14.3 points per Tier 1 crawler allowed (7 crawlers = 100 points max, scaled to 50) |
+| Tier 2 Crawlers Allowed | 25% | ~16.7 points per Tier 2 crawler allowed (6 crawlers = 100 points max, scaled to 25) |
 | No Blanket AI Blocks | 15% | Full points if no `User-agent: *` Disallow: / and no noai meta tags |
 | AI-Specific Files Present | 10% | 5 points for llms.txt, 5 points for sitemap accessible to AI crawlers |
 
 Final score = sum of all weighted components, capped at 100.
+
+**Tier 1 Crawlers (7 total):** GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, xAI-SearchBot, DeepSeekBot
+**Tier 2 Crawlers (6 total):** Google-Extended, GoogleOther, Applebot-Extended, Amazonbot, FacebookBot, Meta-ExternalAgent
+**Tier 3 Crawlers (4 total):** CCBot, anthropic-ai, Bytespider, cohere-ai
